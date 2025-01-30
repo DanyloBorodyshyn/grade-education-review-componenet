@@ -5,6 +5,7 @@ import type { ReviewsData } from '~/types/reviews';
 const reviewsData: globalThis.Ref<ReviewsData[], ReviewsData[]> = ref([])
 //@ts-ignore
 const { setLocale, locale } = useI18n()
+const isLoaded = ref(false)
 
 const setLocaleFunc = (l: string) => {
     setLocale(l)
@@ -12,14 +13,16 @@ const setLocaleFunc = (l: string) => {
 
 onMounted(async () => {
     reviewsData.value = await getReviews()
+    isLoaded.value = true
 })
 </script>
 
 <template>
     <div>
-        <div class="flex items-center mb-5 space-x-5 p-4">
-            <BaseButton @click="setLocaleFunc(item)" :type="locale !== item ? 'secondary' : 'primary'" v-for="item in LOCALES" class="group flex items-center">
-                <span class="group-hover:text-white">{{ item }}</span>
+        <div v-if="isLoaded" class="flex items-center mb-5 space-x-5 p-4">
+            <BaseButton @click="setLocaleFunc(item)" :type="locale !== item ? 'secondary' : 'primary'"
+                v-for="item in LOCALES" class="group flex items-center">
+                <span :class="{'text-white': locale === item, 'group-hover:text-white': locale !== item}">{{ item }}</span>
             </BaseButton>
         </div>
         <div class="flex flex-col items-center space-y-5 p-4">

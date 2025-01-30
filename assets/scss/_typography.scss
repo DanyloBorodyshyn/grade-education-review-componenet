@@ -1,0 +1,11 @@
+@layer base {
+  .small {
+    &__regular {
+      @apply font-formular font-normal text-sm;
+    }
+
+    &__medium {
+      @apply font-formular text-sm;
+    }
+  }
+}

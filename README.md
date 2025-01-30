@@ -1,75 +1,31 @@
-# Nuxt Minimal Starter
+## How to install and run app?
+# First step
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Use 
+```bash
+git clone https://github.com/DanyloBorodyshyn/country-info-app.git
+```
 
-## Setup
-
-Make sure to install dependencies:
+# Second step
 
 ```bash
-# npm
+cd country-info-app
+```
+
+## Setup (Third step)
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+## Run app (Fourth step)
+Important!!!
+Find file ".env.example" and rename it to ".env"
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+## Open app (Fifth step)
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+http://localhost:3000/
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
